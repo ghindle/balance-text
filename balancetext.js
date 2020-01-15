@@ -531,6 +531,7 @@
             const oldDisplay = el.style.display;
             const oldPosition = el.style.position;
             const oldLH = el.style.lineHeight;
+            const oldParentDisplay = el.parentNode.style.display;
 
             // remove line height before measuring container size
             el.style.lineHeight = "normal";
@@ -543,6 +544,7 @@
             el.style.float = "none";
             el.style.display = "inline";
             el.style.position = "static";
+            el.parentNode.style.display = "block";
 
             let nowrapWidth = el.offsetWidth;
             const nowrapHeight = el.offsetHeight;
@@ -645,6 +647,7 @@
             el.style.display = oldDisplay;
             el.style.position = oldPosition;
             el.style.lineHeight = oldLH;
+            el.parentNode.style.display = oldParentDisplay;
         });
     }
 
